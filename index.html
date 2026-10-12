@@ -392,13 +392,14 @@
   </div>
 </footer>
 
-<!-- ============ VIDEO MODAL ============ -->
-<div class="video-modal" id="video-modal">
-  <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
-  <div class="video-modal-inner">
-    <button class="video-modal-close" id="video-modal-close" aria-label="Close">✕</button>
-    <div class="video-modal-frame" id="video-modal-frame"></div>
+<!-- ============ VIDEO WINDOW (draggable + resizable) ============ -->
+<div class="video-window" id="video-window">
+  <div class="video-window-bar" id="video-window-bar">
+    <span class="video-window-title" id="video-window-title">NOW PLAYING</span>
+    <button class="video-window-close" id="video-window-close" aria-label="Close">✕</button>
   </div>
+  <div class="video-window-frame" id="video-window-frame"></div>
+  <div class="video-window-resize" id="video-window-resize"></div>
 </div>
 
 <script src="script.js"></script>
