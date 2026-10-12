@@ -94,7 +94,6 @@ function closeVideo() {
   document.body.style.overflow = '';
 }
 
-/* Все карточки видео */
 document.querySelectorAll('.video-card[data-video]').forEach(function (card) {
   card.addEventListener('click', function () {
     const id = card.getAttribute('data-video');
