@@ -899,6 +899,45 @@ h1, h2, h3,
   line-height: 1.6;
 }
 
+/* ---------- SAMPLES NOTE ---------- */
+.samples-note-section {
+  padding: 0 40px 30px;
+}
+
+.samples-note-box {
+  border-left: 3px solid var(--accent);
+  background: rgba(9, 187, 200, 0.06);
+  padding: 20px 26px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.samples-note-tag {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.samples-note-box p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #b8d8e8;
+  margin: 0;
+}
+
+.samples-note-box strong {
+  color: var(--accent);
+  font-weight: normal;
+}
+
+@media (max-width: 600px) {
+  .samples-note-section { padding: 0 20px 20px; }
+  .samples-note-box { padding: 16px 18px; }
+  .samples-note-box p { font-size: 15px; }
+}
+
 .samples-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
