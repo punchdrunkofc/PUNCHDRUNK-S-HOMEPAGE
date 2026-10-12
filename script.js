@@ -68,6 +68,57 @@ if (marqueeTrack) {
 }
 
 /* ---------------------------------------------------------------
+   VIDEO MODAL — встроенный YouTube-плеер
+--------------------------------------------------------------- */
+const videoModal = document.getElementById('video-modal');
+const videoFrame = document.getElementById('video-modal-frame');
+const videoClose = document.getElementById('video-modal-close');
+const videoBackdrop = document.getElementById('video-modal-backdrop');
+
+function openVideo(youtubeId) {
+  if (!videoModal || !videoFrame) return;
+  videoFrame.innerHTML =
+    '<iframe src="https://www.youtube.com/embed/' + youtubeId +
+    '?autoplay=1&rel=0&modestbranding=1" ' +
+    'title="PUNCHDRUNK.WAV video" ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+    'allowfullscreen></iframe>';
+  videoModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideo() {
+  if (!videoModal || !videoFrame) return;
+  videoModal.classList.remove('open');
+  videoFrame.innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+/* Все карточки видео */
+document.querySelectorAll('.video-card[data-video]').forEach(function (card) {
+  card.addEventListener('click', function () {
+    const id = card.getAttribute('data-video');
+    if (id) openVideo(id);
+  });
+});
+
+/* Кнопка WATCH ALBUM в hero */
+document.querySelectorAll('[data-video]').forEach(function (el) {
+  if (el.classList.contains('video-card')) return;
+  el.addEventListener('click', function () {
+    const id = el.getAttribute('data-video');
+    if (id) openVideo(id);
+  });
+});
+
+if (videoClose) videoClose.addEventListener('click', closeVideo);
+if (videoBackdrop) videoBackdrop.addEventListener('click', closeVideo);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeVideo();
+});
+
+/* ---------------------------------------------------------------
    Сообщение в консоль
 --------------------------------------------------------------- */
 console.log(
