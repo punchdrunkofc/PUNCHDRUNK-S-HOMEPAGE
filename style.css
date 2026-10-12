@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Home Video';
+  src: url('HomeVideo-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #0a0a0f;
   --bg-2: #0f0a14;
