@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUNCHDRUNK.WAV — DIGITAL HARDCORE</title>
 <meta name="description" content="PUNCHDRUNK.WAV — digital hardcore / gabber artist. New album QUESTIONS PART 2 OUT NOW.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
 <header class="header">
   <div class="logo">
     <span class="logo-mark">⚡</span>
@@ -21,7 +19,7 @@
   </div>
   <nav class="nav">
     <a href="#crew">CREW</a>
-    <a href="#music">MUSIC</a>
+    <a href="#videos">MUSIC</a>
     <a href="#videos">VIDEOS</a>
     <a href="#shows">SHOWS</a>
     <a href="#contact">CONTACT</a>
@@ -29,18 +27,15 @@
   <a href="https://www.youtube.com/@PUNCHDRUNKwav/videos" target="_blank" rel="noopener" class="cta-btn">▶ YOUTUBE</a>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-inner">
 
-    <!-- Kenny — левая карточка -->
     <div class="hero-character kenny">
       <div class="hero-char-tag">// CHARACTER 01</div>
       <div class="hero-char-name">KENNY</div>
       <div class="hero-char-desc">green fur · purple hair · no brakes</div>
     </div>
 
-    <!-- Центральный блок -->
     <div class="hero-center">
       <div class="hero-tag">// NEW ALBUM // 2026</div>
       <h1 class="hero-title">
@@ -48,8 +43,8 @@
       </h1>
       <div class="hero-sub">PART 2 · FULL ALBUM</div>
       <div class="hero-buttons">
-        <a href="https://www.youtube.com/watch?v=jGtiMrqr_s4&t=1621s" target="_blank" rel="noopener" class="btn btn-primary">▶ WATCH ALBUM</a>
-        <a href="https://www.youtube.com/@PUNCHDRUNKwav/videos" target="_blank" rel="noopener" class="btn btn-secondary">ALL VIDEOS</a>
+        <button class="btn btn-primary" data-video="jGtiMrqr_s4">▶ WATCH ALBUM</button>
+        <a href="#videos" class="btn btn-secondary">ALL VIDEOS</a>
       </div>
       <div class="hero-platforms">
         <span>FIND US:</span>
@@ -60,7 +55,6 @@
       </div>
     </div>
 
-    <!-- Maurice — правая карточка -->
     <div class="hero-character maurice">
       <div class="hero-char-tag">// CHARACTER 02</div>
       <div class="hero-char-name">MAURICE</div>
@@ -70,7 +64,6 @@
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
 <div class="marquee">
   <div class="marquee-track">
     <span>★ QUESTIONS PART 2 OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ LOUDER ★ FASTER ★ HARDCORE ★ PUNCHDRUNK.WAV ★ QUESTIONS PART 2 OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ LOUDER ★ FASTER ★ HARDCORE ★ PUNCHDRUNK.WAV ★ </span>
@@ -78,7 +71,6 @@
   </div>
 </div>
 
-<!-- ============ CREW ============ -->
 <section class="section" id="crew">
   <div class="section-inner">
     <div class="section-tag">// THE CREW</div>
@@ -86,10 +78,9 @@
 
     <div class="crew-grid">
 
-      <!-- KENNY -->
       <article class="crew-card kenny">
         <div class="crew-avatar kenny-avatar">
-          <span class="crew-initial">K</span>
+          <img src="crew.jpg" alt="Kenny" class="crew-photo crew-photo-kenny">
         </div>
         <div class="crew-info">
           <div class="crew-name">KENNY</div>
@@ -107,10 +98,9 @@
         </div>
       </article>
 
-      <!-- MAURICE -->
       <article class="crew-card maurice">
         <div class="crew-avatar maurice-avatar">
-          <span class="crew-initial">M</span>
+          <img src="crew.jpg" alt="Maurice" class="crew-photo crew-photo-maurice">
         </div>
         <div class="crew-info">
           <div class="crew-name">MAURICE</div>
@@ -132,16 +122,22 @@
   </div>
 </section>
 
-<!-- ============ MUSIC / VIDEOS ============ -->
 <section class="section section-dark" id="videos">
   <div class="section-inner">
     <div class="section-tag">// WATCH</div>
     <h2 class="section-title">VIDEOS</h2>
 
+    <!-- === ВИДНЫЕ СРАЗУ (3) === -->
     <div class="videos">
 
-      <a href="https://www.youtube.com/watch?v=jGtiMrqr_s4&t=1621s" target="_blank" rel="noopener" class="video-card">
+      <div class="video-card" data-video="jGtiMrqr_s4">
         <div class="video-thumb">
+          <img class="video-preview"
+               src="https://img.youtube.com/vi/jGtiMrqr_s4/maxresdefault.jpg"
+               alt="QUESTIONS PART 2"
+               loading="lazy"
+               onerror="this.src='https://img.youtube.com/vi/jGtiMrqr_s4/hqdefault.jpg'">
+          <div class="video-overlay"></div>
           <div class="video-badge">NEW</div>
           <div class="video-play">▶</div>
         </div>
@@ -149,33 +145,188 @@
           <div class="video-title">QUESTIONS PART 2</div>
           <div class="video-meta">OFFICIAL FULL ALBUM MUSIC VIDEO</div>
         </div>
-      </a>
+      </div>
 
-      <a href="https://www.youtube.com/watch?v=5ygNimEywAM" target="_blank" rel="noopener" class="video-card">
+      <div class="video-card" data-video="5ygNimEywAM">
         <div class="video-thumb">
+          <img class="video-preview"
+               src="https://img.youtube.com/vi/5ygNimEywAM/maxresdefault.jpg"
+               alt="GABOOM"
+               loading="lazy"
+               onerror="this.src='https://img.youtube.com/vi/5ygNimEywAM/hqdefault.jpg'">
+          <div class="video-overlay"></div>
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-title">GABOOM</div>
           <div class="video-meta">OFFICIAL GABBER MUSIC VIDEO</div>
         </div>
-      </a>
+      </div>
 
-      <a href="https://www.youtube.com/watch?v=U2wcmrzvpM8" target="_blank" rel="noopener" class="video-card">
+      <div class="video-card" data-video="U2wcmrzvpM8">
         <div class="video-thumb">
+          <img class="video-preview"
+               src="https://img.youtube.com/vi/U2wcmrzvpM8/maxresdefault.jpg"
+               alt="BASSQUAKE ft. CYANBOY"
+               loading="lazy"
+               onerror="this.src='https://img.youtube.com/vi/U2wcmrzvpM8/hqdefault.jpg'">
+          <div class="video-overlay"></div>
           <div class="video-play">▶</div>
         </div>
         <div class="video-info">
           <div class="video-title">BASSQUAKE <span class="track-feat">ft. CYANBOY</span></div>
           <div class="video-meta">OFFICIAL GABBER MUSIC VIDEO</div>
         </div>
-      </a>
+      </div>
 
     </div>
+
+    <!-- === СКРЫТЫЕ (8), раскроются по кнопке === -->
+    <div class="videos-more" id="videos-more">
+      <div class="videos-inner">
+
+        <div class="video-card" data-video="wLnAyywLTm8">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/wLnAyywLTm8/maxresdefault.jpg"
+                 alt="ATTENTION!"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/wLnAyywLTm8/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">ATTENTION!</div>
+            <div class="video-meta">OFFICIAL GABBER MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="7hDuMXJ2_mE">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/7hDuMXJ2_mE/maxresdefault.jpg"
+                 alt="OUT"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/7hDuMXJ2_mE/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">OUT <span class="track-lyric">[LYRIC]</span></div>
+            <div class="video-meta">OFFICIAL DIGITAL HARDCORE MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="VwmgCwhCXVc">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/VwmgCwhCXVc/maxresdefault.jpg"
+                 alt="MAGFEST"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/VwmgCwhCXVc/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">MAGFEST <span class="track-lyric">[LYRIC]</span></div>
+            <div class="video-meta">OFFICIAL DIGITAL HARDCORE MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="AwXC5GJocdY">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/AwXC5GJocdY/maxresdefault.jpg"
+                 alt="KICK"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/AwXC5GJocdY/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">KICK</div>
+            <div class="video-meta">OFFICIAL GABBER MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="YJW_O_so-4A">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/YJW_O_so-4A/maxresdefault.jpg"
+                 alt="PUSH THE TRIGGER"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/YJW_O_so-4A/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">PUSH THE TRIGGER <span class="track-lyric">[LYRIC]</span></div>
+            <div class="video-meta">OFFICIAL HARD DANCE MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="Y_q1twDbfx0">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/Y_q1twDbfx0/maxresdefault.jpg"
+                 alt="KEEP PREPARE FOR THE BATTLE"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/Y_q1twDbfx0/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">KEEP PREPARE FOR THE BATTLE <span class="track-lyric">[LYRIC]</span></div>
+            <div class="video-meta">OFFICIAL EXPERIMENTAL MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="ZhDe0N7wjNk">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/ZhDe0N7wjNk/maxresdefault.jpg"
+                 alt="PUSH THE TEMPO"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/ZhDe0N7wjNk/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">PUSH THE TEMPO</div>
+            <div class="video-meta">OFFICIAL HARD DANCE MUSIC VIDEO</div>
+          </div>
+        </div>
+
+        <div class="video-card" data-video="BxEov8ArMUs">
+          <div class="video-thumb">
+            <img class="video-preview"
+                 src="https://img.youtube.com/vi/BxEov8ArMUs/maxresdefault.jpg"
+                 alt="SPECTRUM"
+                 loading="lazy"
+                 onerror="this.src='https://img.youtube.com/vi/BxEov8ArMUs/hqdefault.jpg'">
+            <div class="video-overlay"></div>
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">SPECTRUM</div>
+            <div class="video-meta">OFFICIAL EXPERIMENTAL MUSIC VIDEO</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- === КНОПКА === -->
+    <div class="show-more-wrap">
+      <button class="show-more-btn" id="show-more-btn" aria-expanded="false">
+        <span class="btn-arrow">▼</span>
+        <span class="btn-text">SHOW ALL VIDEOS</span>
+      </button>
+    </div>
+
   </div>
 </section>
 
-<!-- ============ SHOWS ============ -->
 <section class="section" id="shows">
   <div class="section-inner">
     <div class="section-tag">// TOUR</div>
@@ -201,7 +352,6 @@
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
 <section class="section section-dark" id="contact">
   <div class="section-inner">
     <div class="section-tag">// CONTACT</div>
@@ -243,7 +393,6 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner">
     <div>© 2026 PUNCHDRUNK.WAV</div>
@@ -258,7 +407,15 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- ============ VIDEO MODAL ============ -->
+<div class="video-modal" id="video-modal">
+  <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" id="video-modal-close" aria-label="Close">✕</button>
+    <div class="video-modal-frame" id="video-modal-frame"></div>
+  </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
