@@ -1076,3 +1076,326 @@ h1, h2, h3,
   .sample-download { font-size: 11px; letter-spacing: 1px; }
   .samples-grid { gap: 16px; }
 }
+/* ================================================================
+   MERCH — grid + product pages
+   ================================================================ */
+
+/* ---------- MERCH GRID ---------- */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.merch-card {
+  display: block;
+  text-decoration: none;
+  color: var(--fg);
+  background: rgba(10, 10, 10, 0.6);
+  border: 2px solid var(--dim);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.merch-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(9, 187, 200, 0.5);
+}
+
+.merch-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #0a0a0a;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.merch-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: brightness(0.92) saturate(1.05);
+}
+
+.merch-card:hover .merch-thumb img {
+  transform: scale(1.05);
+  filter: brightness(1.05) saturate(1.2);
+}
+
+.merch-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #000;
+  color: var(--accent);
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.merch-info {
+  padding: 16px 18px 20px;
+}
+
+.merch-cat {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.merch-name {
+  font-family: 'Home Video', monospace;
+  font-size: 17px;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.merch-price {
+  font-family: 'Home Video', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* ---------- PRODUCT PAGE ---------- */
+.product-hero {
+  padding: 60px 40px 20px;
+  background: var(--bg);
+}
+
+.product-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-back {
+  display: inline-block;
+  font-family: 'Home Video', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.product-back:hover {
+  color: var(--accent-2);
+  border-bottom-color: var(--accent-2);
+}
+
+.product-tag {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.product-title {
+  font-family: 'Home Video', monospace;
+  font-size: 56px;
+  line-height: 1.05;
+  color: var(--fg);
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+
+.product-status {
+  display: inline-block;
+  font-family: 'Home Video', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #000;
+  background: var(--arg);
+  padding: 6px 14px;
+}
+
+.product-section {
+  padding: 30px 40px 80px;
+  background: var(--bg);
+}
+
+.product-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.product-gallery {
+  border: 2px solid var(--dim);
+  background: #0a0a0a;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+}
+
+.product-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.95) saturate(1.05);
+}
+
+.product-meta { flex: 1; }
+
+.product-meta-cat {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.product-price {
+  border: 2px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(9, 187, 200, 0.05);
+}
+
+.product-price-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.product-price-value {
+  font-family: 'Home Video', monospace;
+  font-size: 28px;
+  color: var(--fg);
+  letter-spacing: 1px;
+}
+
+.product-block { margin-bottom: 28px; }
+
+.product-block-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.product-block p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #b8d8e8;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #b8d8e8;
+  padding-left: 20px;
+  position: relative;
+}
+
+.product-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.product-sizes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product-sizes span {
+  display: inline-block;
+  border: 2px solid var(--dim);
+  padding: 8px 16px;
+  font-family: 'Home Video', monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--fg);
+  transition: all 0.2s;
+}
+
+.product-sizes span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.product-warning {
+  border-left: 3px solid var(--arg);
+  padding-left: 18px;
+  color: #ff8a8a !important;
+  font-size: 16px !important;
+}
+
+.product-cta {
+  display: inline-block;
+  font-family: 'Home Video', monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 14px 26px;
+  border: 2px solid var(--accent);
+  transition: all 0.15s;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.product-cta:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 25px rgba(9, 187, 200, 0.7);
+}
+
+/* ---------- MERCH MOBILE ---------- */
+@media (max-width: 900px) {
+  .product-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .product-gallery { position: static; }
+
+  .product-title { font-size: 40px; }
+
+  .product-hero { padding: 40px 20px 16px; }
+  .product-section { padding: 24px 20px 60px; }
+}
+
+@media (max-width: 600px) {
+  .merch-grid { gap: 16px; }
+  .merch-info { padding: 14px 14px 18px; }
+  .merch-name { font-size: 15px; }
+
+  .product-title { font-size: 30px; }
+  .product-price-value { font-size: 22px; }
+  .product-price { padding: 14px 16px; }
+}
