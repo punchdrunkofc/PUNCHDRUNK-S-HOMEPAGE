@@ -27,6 +27,8 @@
 
   --kenny:   #61ad73;
   --maurice: #ff7a1a;
+
+  --arg:     #ff2a2a;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -103,6 +105,13 @@ h1, h2, h3,
 
 .nav a:hover { color: var(--accent); }
 
+/* ---------- HEADER CTA BUTTONS ---------- */
+.header-cta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .cta-btn {
   background: var(--accent);
   color: #000;
@@ -112,12 +121,32 @@ h1, h2, h3,
   letter-spacing: 1px;
   border: 2px solid var(--accent);
   transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .cta-btn:hover {
   background: transparent;
   color: var(--accent);
   box-shadow: 0 0 20px rgba(9, 187, 200, 0.6);
+}
+
+/* Кнопка THE WHEEL — красная, пульсирует */
+.cta-btn-arg {
+  background: var(--arg);
+  color: #fff;
+  border-color: var(--arg);
+  animation: arg-pulse 3s ease-in-out infinite;
+}
+
+.cta-btn-arg:hover {
+  background: transparent;
+  color: var(--arg);
+  box-shadow: 0 0 25px rgba(255, 42, 42, 0.85);
+}
+
+@keyframes arg-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 42, 42, 0.0); }
+  50%      { box-shadow: 0 0 18px rgba(255, 42, 42, 0.7); }
 }
 
 /* ---------- HERO ---------- */
@@ -750,7 +779,7 @@ h1, h2, h3,
 }
 
 @media (max-width: 600px) {
-  .header { padding: 12px 14px; }
+  .header { padding: 12px 14px; flex-wrap: wrap; gap: 10px; }
   .nav { display: none; }
   .hero { padding: 40px 20px; }
   .hero-title { font-size: 40px; }
@@ -761,6 +790,13 @@ h1, h2, h3,
 
   .crew-avatar { width: 90px; height: 90px; }
   .logo-img { width: 34px; height: 34px; }
+
+  .header-cta { gap: 6px; }
+  .cta-btn {
+    font-size: 11px;
+    padding: 8px 12px;
+    letter-spacing: 0.5px;
+  }
 }
 
 /* ---------- VIDEO WINDOW (draggable + resizable) ---------- */
@@ -900,9 +936,7 @@ h1, h2, h3,
 }
 
 /* ---------- SAMPLES NOTE ---------- */
-.samples-note-section {
-  padding: 0 40px 30px;
-}
+.samples-note-section { padding: 0 40px 30px; }
 
 .samples-note-box {
   border-left: 3px solid var(--accent);
