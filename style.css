@@ -1,248 +1,678 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PUNCHDRUNK.WAV — BASSQUAKE</title>
-<meta name="description" content="Digital hardcore / gabber artist. New single BASSQUAKE OUT NOW.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+  --acid: #e8f000;
+  --acid-dark: #c8d000;
+  --blue: #2222cc;
+  --blue-dark: #1010aa;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --red: #ff0033;
+}
 
-<!-- ВЕРХНИЙ ХЕДЕР -->
-<header class="header">
-  <div class="logo">
-    <span class="logo-mark">⚡</span>
-    <span class="logo-text">PUNCHDRUNK<span class="accent">.WAV</span></span>
-  </div>
-  <nav class="nav">
-    <a href="#music">MUSIC</a>
-    <a href="#videos">VIDEOS</a>
-    <a href="#shows">SHOWS</a>
-    <a href="#about">ABOUT</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-  <a href="#music" class="cta-btn">NEW SINGLE ↓</a>
-</header>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-tag">// NEW SINGLE // 2026</div>
-      <h1 class="hero-title">
-        <span class="glitch" data-text="BASSQUAKE">BASSQUAKE</span>
-      </h1>
-      <div class="hero-sub">PUNCHDRUNK ft. CYANBOY</div>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">▶ PLAY NOW</a>
-        <a href="#videos" class="btn btn-secondary">WATCH CLIP</a>
-      </div>
-      <div class="hero-platforms">
-        <span>LISTEN ON:</span>
-        <a href="#">SPOTIFY</a>
-        <a href="#">YOUTUBE</a>
-        <a href="#">SOUNDCLOUD</a>
-        <a href="#">BANDCAMP</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="cover-art">
-        <div class="cover-glitch"></div>
-        <div class="cover-title">BASSQUAKE</div>
-        <div class="cover-sub">PUNCHDRUNK × CYANBOY</div>
-      </div>
-    </div>
-  </div>
-</section>
+html { scroll-behavior: smooth; }
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ </span>
-    <span>★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ </span>
-  </div>
-</div>
+body {
+  background: var(--acid);
+  color: var(--black);
+  font-family: "VT323", "Courier New", monospace;
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  cursor: default;
+}
 
-<!-- MUSIC -->
-<section class="section" id="music">
-  <div class="section-inner">
-    <div class="section-tag">// DISCOGRAPHY</div>
-    <h2 class="section-title">MY <span class="accent">MUSIC</span></h2>
+h1, h2, h3, .logo-text, .btn, .track-name, .section-title {
+  font-family: "Bungee", sans-serif;
+  letter-spacing: 1px;
+}
 
-    <div class="tracks">
-      <article class="track">
-        <div class="track-art" style="background:#e8f000;">01</div>
-        <div class="track-info">
-          <div class="track-name">BASSQUAKE <span class="track-feat">ft. CYANBOY</span></div>
-          <div class="track-meta">SINGLE · 2026 · 180 BPM</div>
-        </div>
-        <div class="track-actions">
-          <button class="track-play" data-src="#">▶</button>
-        </div>
-      </article>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--black);
+  color: var(--acid);
+  border-bottom: 4px solid var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-      <article class="track">
-        <div class="track-art" style="background:#2222cc;color:#fff;">02</div>
-        <div class="track-info">
-          <div class="track-name">TOTAL OVERDRIVE</div>
-          <div class="track-meta">EP · 2025 · 195 BPM</div>
-        </div>
-        <div class="track-actions">
-          <button class="track-play">▶</button>
-        </div>
-      </article>
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+}
 
-      <article class="track">
-        <div class="track-art" style="background:#ff0000;color:#fff;">03</div>
-        <div class="track-info">
-          <div class="track-name">SYSTEM FAILURE</div>
-          <div class="track-meta">SINGLE · 2025 · 200 BPM</div>
-        </div>
-        <div class="track-actions">
-          <button class="track-play">▶</button>
-        </div>
-      </article>
+.logo-mark {
+  color: var(--acid);
+  font-size: 28px;
+  animation: blink 1.5s infinite;
+}
 
-      <article class="track">
-        <div class="track-art" style="background:#000;color:#e8f000;">04</div>
-        <div class="track-info">
-          <div class="track-name">DON'T STOP</div>
-          <div class="track-meta">SINGLE · 2024 · 175 BPM</div>
-        </div>
-        <div class="track-actions">
-          <button class="track-play">▶</button>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+.logo-text { color: var(--white); }
+.logo-text .accent { color: var(--acid); }
 
-<!-- VIDEOS -->
-<section class="section section-dark" id="videos">
-  <div class="section-inner">
-    <div class="section-tag">// WATCH</div>
-    <h2 class="section-title">VIDEOS</h2>
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95%           { opacity: 0.2; }
+}
 
-    <div class="videos">
-      <a href="https://youtube.com" target="_blank" class="video-card">
-        <div class="video-thumb">
-          <div class="video-badge">NEW</div>
-        </div>
-        <div class="video-info">
-          <div class="video-title">BASSQUAKE (OFFICIAL VIDEO)</div>
-          <div class="video-meta">4.7K views · 4 months ago</div>
-        </div>
-      </a>
+.nav {
+  display: flex;
+  gap: 28px;
+  font-family: "Bungee", sans-serif;
+  font-size: 14px;
+}
 
-      <a href="https://youtube.com" target="_blank" class="video-card">
-        <div class="video-thumb"></div>
-        <div class="video-info">
-          <div class="video-title">GABOOM (OFFICIAL GABBER VIDEO)</div>
-          <div class="video-meta">2.1K views · 1 month ago</div>
-        </div>
-      </a>
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.2s;
+}
 
-      <a href="https://youtube.com" target="_blank" class="video-card">
-        <div class="video-thumb"></div>
-        <div class="video-info">
-          <div class="video-title">LIVE @ CLUB // 2025</div>
-          <div class="video-meta">1.4K views · 2 months ago</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+.nav a:hover { color: var(--acid); }
 
-<!-- SHOWS -->
-<section class="section" id="shows">
-  <div class="section-inner">
-    <div class="section-tag">// TOUR</div>
-    <h2 class="section-title">SHOWS</h2>
+.cta-btn {
+  background: var(--acid);
+  color: var(--black);
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: "Bungee", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--blue);
+  transition: all 0.15s;
+}
 
-    <div class="shows">
-      <div class="show">
-        <div class="show-date">15.11.2026</div>
-        <div class="show-city">Москва · Клуб «Пульс»</div>
-        <div class="show-status">TICKETS</div>
-      </div>
-      <div class="show">
-        <div class="show-date">22.11.2026</div>
-        <div class="show-city">Санкт-Петербург · Клуб «Гараж»</div>
-        <div class="show-status">TICKETS</div>
-      </div>
-      <div class="show">
-        <div class="show-date">06.12.2026</div>
-        <div class="show-city">Казань · FEST HARDCORE</div>
-        <div class="show-status">SOON</div>
-      </div>
-    </div>
-  </div>
-</section>
+.cta-btn:hover {
+  background: var(--blue);
+  color: var(--acid);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--black);
+}
+.hero {
+  padding: 80px 40px;
+  background: var(--acid);
+  position: relative;
+}
 
-<!-- ABOUT -->
-<section class="section section-dark" id="about">
-  <div class="section-inner">
-    <div class="section-tag">// ABOUT</div>
-    <h2 class="section-title">WHO IS <span class="accent">PUNCHDRUNK?</span></h2>
-    <p class="about-text">
-      Digital hardcore artist from Russia. Started in 2023 as a bedroom project, now playing clubs and festivals across Europe. Mixing gabber kicks with broken breaks, acid lines, and total noise. 200 BPM is a warm-up.
-    </p>
-    <p class="about-text dim">
-      "Louder. Faster. Harder. Don't stop."
-    </p>
-  </div>
-</section>
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="section-inner">
-    <div class="section-tag">// CONTACT</div>
-    <h2 class="section-title">GET IN TOUCH</h2>
+.hero-tag {
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  color: var(--blue);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
 
-    <div class="contact-grid">
-      <a href="mailto:book@punchdrunk.wav" class="contact-card">
-        <div class="contact-icon">@</div>
-        <div class="contact-label">BOOKING</div>
-        <div class="contact-value">book@punchdrunk.wav</div>
-      </a>
-      <a href="https://youtube.com" class="contact-card">
-        <div class="contact-icon">▶</div>
-        <div class="contact-label">YOUTUBE</div>
-        <div class="contact-value">@punchdrunk.wav</div>
-      </a>
-      <a href="https://t.me" class="contact-card">
-        <div class="contact-icon">✈</div>
-        <div class="contact-label">TELEGRAM</div>
-        <div class="contact-value">@punchdrunkwav</div>
-      </a>
-      <a href="https://discord.gg" class="contact-card">
-        <div class="contact-icon">◎</div>
-        <div class="contact-label">DISCORD</div>
-        <div class="contact-value">/punchdrunk</div>
-      </a>
-    </div>
-  </div>
-</section>
+.hero-title {
+  font-size: 84px;
+  line-height: 0.95;
+  color: var(--black);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div>© 2026 PUNCHDRUNK.WAV</div>
-    <div class="footer-links">
-      <a href="#">PRESS KIT</a>
-      <a href="#">MERCH</a>
-      <a href="#">DEMO</a>
-    </div>
-    <div>MADE WITH ⚡ IN RUSSIA</div>
-  </div>
-</footer>
+.glitch {
+  position: relative;
+  display: inline-block;
+}
 
-<script src="script.js"></script>
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
 
-</body>
-</html>
+.glitch::before {
+  color: var(--blue);
+  animation: glitch-1 2s infinite linear alternate-reverse;
+  z-index: -1;
+}
+
+.glitch::after {
+  color: var(--red);
+  animation: glitch-2 3s infinite linear alternate-reverse;
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-4px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(4px, 2px); }
+  80% { transform: translate(2px, -4px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(4px, -2px); }
+  50% { transform: translate(-4px, 2px); }
+  75% { transform: translate(2px, 4px); }
+}
+
+.hero-sub {
+  font-size: 20px;
+  color: var(--blue);
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 28px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: 3px solid var(--black);
+  transition: all 0.15s;
+  cursor: pointer;
+  font-family: "Bungee", sans-serif;
+}
+
+.btn-primary {
+  background: var(--black);
+  color: var(--acid);
+  box-shadow: 5px 5px 0 var(--blue);
+}
+
+.btn-primary:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--blue);
+  background: var(--blue);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+}
+
+.btn-secondary:hover {
+  background: var(--black);
+  color: var(--acid);
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.hero-platforms {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.hero-platforms span {
+  color: var(--black);
+  opacity: 0.6;
+}
+
+.hero-platforms a {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 2px dashed var(--blue);
+  transition: all 0.2s;
+}
+
+.hero-platforms a:hover {
+  color: var(--black);
+  border-bottom-color: var(--black);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.cover-art {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  background: var(--blue);
+  position: relative;
+  border: 6px solid var(--black);
+  box-shadow: 12px 12px 0 var(--black);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-glitch {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(232, 240, 0, 0.15) 3px,
+    rgba(232, 240, 0, 0.15) 4px
+  );
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+.cover-title {
+  font-family: "Bungee", sans-serif;
+  font-size: 68px;
+  color: var(--acid);
+  letter-spacing: -2px;
+  text-shadow: 4px 4px 0 var(--black);
+  text-align: center;
+  line-height: 1;
+  z-index: 2;
+  transform: rotate(-4deg);
+}
+
+.cover-sub {
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  color: var(--white);
+  margin-top: 20px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.marquee {
+  background: var(--black);
+  color: var(--acid);
+  padding: 16px 0;
+  overflow: hidden;
+  border-top: 4px solid var(--blue);
+  border-bottom: 4px solid var(--blue);
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+  font-family: "Bungee", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.marquee-track span { padding-right: 40px; }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.section {
+  padding: 80px 40px;
+  background: var(--acid);
+  position: relative;
+}
+
+.section-dark {
+  background: var(--black);
+  color: var(--acid);
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  color: var(--blue);
+  margin-bottom: 16px;
+  letter-spacing: 3px;
+}
+
+.section-dark .section-tag { color: var(--acid); }
+
+.section-title {
+  font-size: 54px;
+  color: var(--black);
+  margin-bottom: 48px;
+  letter-spacing: -1px;
+}
+
+.section-dark .section-title { color: var(--white); }
+
+.section-title .accent { color: var(--blue); }
+.section-dark .section-title .accent { color: var(--acid); }
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+  transition: all 0.15s;
+}
+
+.track:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--blue);
+}
+
+.track-art {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 32px;
+  border: 2px solid var(--black);
+}
+
+.track-name {
+  font-size: 22px;
+  color: var(--black);
+  letter-spacing: 1px;
+}
+
+.track-feat {
+  font-size: 14px;
+  color: var(--blue);
+  font-family: "VT323", monospace;
+}
+
+.track-meta {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.track-play {
+  width: 56px;
+  height: 56px;
+  background: var(--black);
+  color: var(--acid);
+  border: 3px solid var(--black);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: "Bungee", sans-serif;
+}
+
+.track-play:hover {
+  background: var(--acid);
+  color: var(--black);
+  transform: scale(1.1);
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  display: block;
+  text-decoration: none;
+  background: var(--white);
+  border: 3px solid var(--acid);
+  padding: 12px;
+  transition: all 0.2s;
+  color: var(--black);
+}
+
+.video-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--acid);
+}
+
+.video-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--blue);
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-thumb::before {
+  content: "▶";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: var(--acid);
+}
+
+.video-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--red);
+  color: var(--white);
+  padding: 4px 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  z-index: 2;
+}
+
+.video-title {
+  font-family: "Bungee", sans-serif;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.video-meta {
+  font-size: 14px;
+  color: #999;
+}
+.shows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.show {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  padding: 20px;
+  background: var(--white);
+  border: 3px solid var(--black);
+  transition: all 0.15s;
+}
+
+.show:hover {
+  background: var(--black);
+  color: var(--acid);
+  transform: translateX(6px);
+}
+
+.show-date {
+  font-family: "Bungee", sans-serif;
+  font-size: 18px;
+  color: var(--blue);
+}
+
+.show:hover .show-date { color: var(--acid); }
+
+.show-city {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.show-status {
+  font-family: "Bungee", sans-serif;
+  font-size: 13px;
+  padding: 8px 16px;
+  border: 2px solid var(--black);
+  background: var(--acid);
+  color: var(--black);
+  letter-spacing: 2px;
+}
+
+.about-text {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.about-text.dim {
+  color: var(--blue);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.section-dark .about-text.dim { color: var(--acid); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  display: block;
+  padding: 24px;
+  background: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.15s;
+}
+
+.contact-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--blue);
+  background: var(--blue);
+  color: var(--acid);
+}
+
+.contact-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  font-family: "Bungee", sans-serif;
+}
+
+.contact-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.contact-value {
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.footer {
+  background: var(--black);
+  color: var(--acid);
+  padding: 32px 40px;
+  border-top: 4px solid var(--blue);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: "Bungee", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--acid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    font-size: 12px;
+  }
+  .hero { padding: 40px 20px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-title { font-size: 48px; }
+  .cover-title { font-size: 44px; }
+  .section { padding: 50px 20px; }
+  .section-title { font-size: 34px; margin-bottom: 32px; }
+  .track {
+    grid-template-columns: 60px 1fr auto;
+    gap: 12px;
+    padding: 12px;
+  }
+  .track-art { width: 60px; height: 60px; font-size: 24px; }
+  .track-name { font-size: 16px; }
+  .show {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
