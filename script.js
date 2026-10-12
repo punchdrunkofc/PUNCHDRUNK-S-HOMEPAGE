@@ -118,6 +118,27 @@ document.addEventListener('keydown', function (e) {
 });
 
 /* ---------------------------------------------------------------
+   SHOW MORE VIDEOS — плавное раскрытие
+--------------------------------------------------------------- */
+(function () {
+  const moreBlock = document.getElementById('videos-more');
+  const btn = document.getElementById('show-more-btn');
+  if (!moreBlock || !btn) return;
+
+  const btnText = btn.querySelector('.btn-text');
+
+  btn.addEventListener('click', function () {
+    const isOpen = moreBlock.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    if (btnText) {
+      btnText.textContent = isOpen ? 'HIDE VIDEOS' : 'SHOW ALL VIDEOS';
+    }
+  });
+})();
+
+/* ---------------------------------------------------------------
    Сообщение в консоль
 --------------------------------------------------------------- */
 console.log(
