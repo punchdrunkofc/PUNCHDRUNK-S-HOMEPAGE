@@ -1,50 +1,8 @@
 'use strict';
 
-let AC = null;
-function ctx() {
-  if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
-  if (AC.state === 'suspended') AC.resume();
-  return AC;
-}
-
-function punchSound() {
-  const c = ctx();
-  const t = c.currentTime;
-
-  const osc = c.createOscillator();
-  const gain = c.createGain();
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(180, t);
-  osc.frequency.exponentialRampToValueAtTime(40, t + 0.15);
-  gain.gain.setValueAtTime(0.0001, t);
-  gain.gain.exponentialRampToValueAtTime(0.25, t + 0.002);
-  gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
-  osc.connect(gain).connect(c.destination);
-  osc.start(t);
-  osc.stop(t + 0.2);
-
-  const buf = c.createBuffer(1, Math.floor(c.sampleRate * 0.1), c.sampleRate);
-  const data = buf.getChannelData(0);
-  for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
-  const src = c.createBufferSource();
-  src.buffer = buf;
-  const hp = c.createBiquadFilter();
-  hp.type = 'highpass';
-  hp.frequency.value = 3000;
-  const g2 = c.createGain();
-  g2.gain.setValueAtTime(0.15, t);
-  g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.1);
-  src.connect(hp).connect(g2).connect(c.destination);
-  src.start(t);
-  src.stop(t + 0.12);
-}
-
-document.addEventListener('click', function (e) {
-  const target = e.target.closest('a, button');
-  if (!target) return;
-  try { punchSound(); } catch (err) {}
-}, { passive: true });
-
+/* ---------------------------------------------------------------
+   Плавный скролл по якорям
+--------------------------------------------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {
     const id = a.getAttribute('href');
@@ -57,6 +15,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   });
 });
 
+/* ---------------------------------------------------------------
+   Глитч заголовка QUESTIONS
+--------------------------------------------------------------- */
 const glitchEl = document.querySelector('.glitch');
 if (glitchEl) {
   setInterval(function () {
@@ -68,6 +29,9 @@ if (glitchEl) {
   }, 2500);
 }
 
+/* ---------------------------------------------------------------
+   Появление секций при скролле
+--------------------------------------------------------------- */
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -87,6 +51,9 @@ if ('IntersectionObserver' in window) {
   });
 }
 
+/* ---------------------------------------------------------------
+   Пауза бегущей строки при наведении
+--------------------------------------------------------------- */
 const marqueeTrack = document.querySelector('.marquee-track');
 if (marqueeTrack) {
   const marquee = marqueeTrack.closest('.marquee');
@@ -100,8 +67,11 @@ if (marqueeTrack) {
   }
 }
 
+/* ---------------------------------------------------------------
+   Сообщение в консоль
+--------------------------------------------------------------- */
 console.log(
   '%cPUNCHDRUNK.WAV%c\\nQUESTIONS PART 2 — OUT NOW',
-  'color:#ff0033;font-family:monospace;font-size:16px;font-weight:bold;',
+  'color:#09BBC8;font-family:monospace;font-size:16px;font-weight:bold;',
   'color:#61ad73;font-family:monospace;font-size:12px;'
 );
