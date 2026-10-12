@@ -898,3 +898,128 @@ h1, h2, h3,
     z-index: 10;
   }
 }
+
+/* ---------- SAMPLES PAGE ---------- */
+.hero-samples {
+  padding: 70px 40px 60px;
+}
+
+.hero-samples-desc {
+  color: #b8d8e8;
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.samples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.sample-card {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1 / 1;
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 22px;
+}
+
+.sample-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(9, 187, 200, 0.6);
+}
+
+/* Варианты цветов */
+.sample-cyan      { background: #09BBC8; color: #000; }
+.sample-sapphire  { background: #405FFA; color: #fff; border-color: #405FFA; }
+.sample-kenny     { background: #61ad73; color: #000; border-color: #61ad73; }
+.sample-maurice   { background: #ff7a1a; color: #000; border-color: #ff7a1a; }
+.sample-indigo    { background: #383664; color: #fff; border-color: #383664; }
+
+.sample-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #000;
+  color: #09BBC8;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.sample-body {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sample-title {
+  font-family: 'Home Video', monospace;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  word-break: break-word;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.sample-meta {
+  font-family: "VT323", monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.sample-download {
+  font-family: 'Home Video', monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border-top: 2px solid currentColor;
+  padding-top: 12px;
+  margin-top: 18px;
+  transition: opacity 0.2s;
+  opacity: 0.85;
+}
+
+.sample-card:hover .sample-download {
+  opacity: 1;
+}
+
+/* Лёгкий глитч-паттерн поверх плашки */
+.sample-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.sample-body,
+.sample-download,
+.sample-badge {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .sample-title { font-size: 20px; }
+  .sample-meta { font-size: 12px; }
+  .sample-download { font-size: 11px; letter-spacing: 1px; }
+  .samples-grid { gap: 16px; }
+}
