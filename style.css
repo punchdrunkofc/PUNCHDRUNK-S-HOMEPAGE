@@ -1023,3 +1023,161 @@ h1, h2, h3,
   .sample-download { font-size: 11px; letter-spacing: 1px; }
   .samples-grid { gap: 16px; }
 }
+/* ---------- GALLERY / PHOTOS ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 14px;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--dim);
+  background: #0a0a0a;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Каждая третья карточка — крупная, 2×2 */
+.gallery-item:nth-child(3n+1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: brightness(0.85) saturate(1.1);
+}
+
+.gallery-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(9, 187, 200, 0.5);
+  transform: translateY(-3px);
+  z-index: 2;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05) saturate(1.3);
+}
+
+/* Кнопка + при наведении */
+.gallery-item::after {
+  content: "+";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Home Video', monospace;
+  font-size: 60px;
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: calc(90vh - 60px);
+  display: block;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 60px rgba(9, 187, 200, 0.5);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  font-family: 'Home Video', monospace;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--fg);
+  text-align: center;
+  min-height: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  width: 42px;
+  height: 42px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Home Video', monospace;
+  transition: all 0.15s;
+}
+
+.lightbox-close:hover {
+  background: var(--accent-2);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-2);
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+    gap: 10px;
+  }
+
+  .gallery-item:nth-child(3n+1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .lightbox-close {
+    top: 6px;
+    right: 6px;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+  }
+}
