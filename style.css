@@ -448,6 +448,93 @@ h1, h2, h3,
 .kenny-tag { color: var(--kenny); border-color: var(--kenny); background: rgba(97, 173, 115, 0.1); }
 .maurice-tag { color: var(--maurice); border-color: var(--maurice); background: rgba(255, 122, 26, 0.1); }
 
+/* ---------- BIO ---------- */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.bio-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #b8d8e8;
+  margin-bottom: 18px;
+}
+
+.bio-lead {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+  color: var(--fg) !important;
+  border-left: 3px solid var(--accent);
+  padding-left: 18px;
+  margin-bottom: 26px !important;
+}
+
+.bio-lead strong {
+  color: var(--accent);
+  font-weight: normal;
+}
+
+.bio-text p strong {
+  color: var(--accent-2);
+  font-weight: normal;
+}
+
+.bio-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent);
+  transition: all 0.2s;
+}
+
+.bio-link:hover {
+  color: var(--accent-2);
+  border-bottom-color: var(--accent-2);
+}
+
+.bio-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bio-fact {
+  border: 2px solid var(--dim);
+  padding: 14px 18px;
+  background: rgba(10, 10, 10, 0.6);
+  transition: all 0.2s;
+}
+
+.bio-fact:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(9, 187, 200, 0.3);
+}
+
+.bio-fact-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.bio-fact-value {
+  font-family: 'Home Video', monospace;
+  font-size: 15px;
+  color: var(--fg);
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 /* ---------- VIDEOS ---------- */
 .videos {
   display: grid;
