@@ -370,32 +370,53 @@ h1, h2, h3,
   transform: translateY(-3px);
 }
 
+/* ---------- АВАТАРКИ ---------- */
 .crew-avatar {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   flex-shrink: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px solid;
+  overflow: hidden;
+  position: relative;
 }
 
 .kenny-avatar {
-  background: rgba(97, 173, 115, 0.15);
   border-color: var(--kenny);
-  box-shadow: 0 0 20px rgba(97, 173, 115, 0.5);
+  box-shadow: 0 0 25px rgba(97, 173, 115, 0.6);
 }
 
 .maurice-avatar {
-  background: rgba(255, 122, 26, 0.15);
   border-color: var(--maurice);
-  box-shadow: 0 0 20px rgba(255, 122, 26, 0.5);
+  box-shadow: 0 0 25px rgba(255, 122, 26, 0.6);
 }
 
-.crew-initial { font-family: 'Home Video', monospace; font-size: 48px; }
-.kenny-avatar .crew-initial { color: var(--kenny); }
-.maurice-avatar .crew-initial { color: var(--maurice); }
+/* Фото внутри круга — обрезаем под Kenny (левая половина) */
+.crew-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.crew-photo-kenny {
+  /* Kenny слева на картинке — берём левые ~55% */
+  left: 0;
+  transform: translateX(-22%);
+}
+
+.crew-photo-maurice {
+  /* Maurice справа — сдвигаем фото влево, чтобы показать правую часть */
+  right: 0;
+  left: auto;
+  transform: translateX(22%);
+}
 
 .crew-info { flex: 1; }
 
@@ -713,6 +734,8 @@ h1, h2, h3,
   .show { grid-template-columns: 1fr; gap: 8px; text-align: left; }
   .footer-inner { flex-direction: column; text-align: center; }
   .marquee-track { font-size: 16px; }
+
+  .crew-avatar { width: 90px; height: 90px; }
 }
 
 /* ---------- VIDEO MODAL ---------- */
