@@ -525,6 +525,74 @@ h1, h2, h3,
 
 .video-meta { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
 
+/* ---------- SHOW MORE VIDEOS ---------- */
+.videos-more {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.7s ease, opacity 0.5s ease, margin-top 0.5s ease;
+  margin-top: 0;
+}
+
+.videos-more.open {
+  max-height: 4000px;
+  opacity: 1;
+  margin-top: 22px;
+}
+
+.videos-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  padding-bottom: 4px;
+}
+
+.show-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.show-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  font-family: 'Home Video', monospace;
+  font-size: 15px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.show-more-btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 30px rgba(9, 187, 200, 0.6);
+}
+
+.show-more-btn .btn-arrow {
+  display: inline-block;
+  transition: transform 0.4s ease;
+  font-size: 14px;
+}
+
+.show-more-btn.open .btn-arrow {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+  .show-more-btn {
+    font-size: 13px;
+    padding: 14px 22px;
+    letter-spacing: 2px;
+  }
+}
+
 /* ---------- SHOWS ---------- */
 .shows { display: flex; flex-direction: column; gap: 12px; }
 
