@@ -521,7 +521,8 @@ h1, h2, h3,
 
 .video-title { font-size: 18px; color: var(--fg); margin-bottom: 6px; }
 
-.track-feat { font-size: 12px; color: var(--accent-2); font-family: "VT323", monospace; }
+.track-feat  { font-size: 12px; color: var(--accent-2); font-family: "VT323", monospace; }
+.track-lyric { font-size: 12px; color: #ff2a2a;          font-family: "VT323", monospace; }
 
 .video-meta { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
 
