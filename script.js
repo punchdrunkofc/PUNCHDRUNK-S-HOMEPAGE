@@ -68,36 +68,45 @@ if (marqueeTrack) {
 }
 
 /* ---------------------------------------------------------------
-   VIDEO MODAL — встроенный YouTube-плеер
+   VIDEO WINDOW — draggable + resizable player
 --------------------------------------------------------------- */
-const videoModal = document.getElementById('video-modal');
-const videoFrame = document.getElementById('video-modal-frame');
-const videoClose = document.getElementById('video-modal-close');
-const videoBackdrop = document.getElementById('video-modal-backdrop');
+const videoWindow = document.getElementById('video-window');
+const videoWindowBar = document.getElementById('video-window-bar');
+const videoWindowFrame = document.getElementById('video-window-frame');
+const videoWindowClose = document.getElementById('video-window-close');
+const videoWindowResize = document.getElementById('video-window-resize');
+const videoWindowTitle = document.getElementById('video-window-title');
 
-function openVideo(youtubeId) {
-  if (!videoModal || !videoFrame) return;
-  videoFrame.innerHTML =
+function openVideo(youtubeId, titleText) {
+  if (!videoWindow || !videoWindowFrame) return;
+
+  videoWindowFrame.innerHTML =
     '<iframe src="https://www.youtube.com/embed/' + youtubeId +
     '?autoplay=1&rel=0&modestbranding=1" ' +
     'title="PUNCHDRUNK.WAV video" ' +
     'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
     'allowfullscreen></iframe>';
-  videoModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
+
+  if (videoWindowTitle && titleText) {
+    videoWindowTitle.textContent = titleText;
+  }
+
+  videoWindow.classList.add('open');
 }
 
 function closeVideo() {
-  if (!videoModal || !videoFrame) return;
-  videoModal.classList.remove('open');
-  videoFrame.innerHTML = '';
-  document.body.style.overflow = '';
+  if (!videoWindow || !videoWindowFrame) return;
+  videoWindow.classList.remove('open');
+  videoWindowFrame.innerHTML = '';
 }
 
+/* Открытие по клику на карточку */
 document.querySelectorAll('.video-card[data-video]').forEach(function (card) {
   card.addEventListener('click', function () {
     const id = card.getAttribute('data-video');
-    if (id) openVideo(id);
+    const titleEl = card.querySelector('.video-title');
+    const titleText = titleEl ? titleEl.textContent.trim() : 'NOW PLAYING';
+    if (id) openVideo(id, titleText);
   });
 });
 
@@ -106,16 +115,177 @@ document.querySelectorAll('[data-video]').forEach(function (el) {
   if (el.classList.contains('video-card')) return;
   el.addEventListener('click', function () {
     const id = el.getAttribute('data-video');
-    if (id) openVideo(id);
+    if (id) openVideo(id, 'QUESTIONS PART 2');
   });
 });
 
-if (videoClose) videoClose.addEventListener('click', closeVideo);
-if (videoBackdrop) videoBackdrop.addEventListener('click', closeVideo);
+if (videoWindowClose) videoWindowClose.addEventListener('click', closeVideo);
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeVideo();
 });
+
+/* ---------- ПЕРЕТАСКИВАНИЕ ---------- */
+(function () {
+  if (!videoWindow || !videoWindowBar) return;
+
+  let isDragging = false;
+  let startX = 0, startY = 0;
+  let startLeft = 0, startTop = 0;
+
+  videoWindowBar.addEventListener('mousedown', function (e) {
+    if (e.target.closest('.video-window-close')) return;
+
+    isDragging = true;
+    videoWindowBar.classList.add('dragging');
+
+    const rect = videoWindow.getBoundingClientRect();
+    videoWindow.style.left = rect.left + 'px';
+    videoWindow.style.top = rect.top + 'px';
+    videoWindow.style.right = 'auto';
+    videoWindow.style.bottom = 'auto';
+
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = rect.left;
+    startTop = rect.top;
+
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!isDragging) return;
+
+    let newLeft = startLeft + (e.clientX - startX);
+    let newTop = startTop + (e.clientY - startY);
+
+    const maxLeft = window.innerWidth - videoWindow.offsetWidth;
+    const maxTop = window.innerHeight - videoWindow.offsetHeight;
+
+    newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+    newTop = Math.max(0, Math.min(newTop, maxTop));
+
+    videoWindow.style.left = newLeft + 'px';
+    videoWindow.style.top = newTop + 'px';
+  });
+
+  document.addEventListener('mouseup', function () {
+    if (!isDragging) return;
+    isDragging = false;
+    videoWindowBar.classList.remove('dragging');
+  });
+
+  /* Touch */
+  videoWindowBar.addEventListener('touchstart', function (e) {
+    if (e.target.closest('.video-window-close')) return;
+    const touch = e.touches[0];
+    const rect = videoWindow.getBoundingClientRect();
+    videoWindow.style.left = rect.left + 'px';
+    videoWindow.style.top = rect.top + 'px';
+    videoWindow.style.right = 'auto';
+    videoWindow.style.bottom = 'auto';
+
+    startX = touch.clientX;
+    startY = touch.clientY;
+    startLeft = rect.left;
+    startTop = rect.top;
+    isDragging = true;
+    videoWindowBar.classList.add('dragging');
+  }, { passive: true });
+
+  document.addEventListener('touchmove', function (e) {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    let newLeft = startLeft + (touch.clientX - startX);
+    let newTop = startTop + (touch.clientY - startY);
+
+    const maxLeft = window.innerWidth - videoWindow.offsetWidth;
+    const maxTop = window.innerHeight - videoWindow.offsetHeight;
+
+    newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+    newTop = Math.max(0, Math.min(newTop, maxTop));
+
+    videoWindow.style.left = newLeft + 'px';
+    videoWindow.style.top = newTop + 'px';
+  }, { passive: true });
+
+  document.addEventListener('touchend', function () {
+    isDragging = false;
+    videoWindowBar.classList.remove('dragging');
+  });
+})();
+
+/* ---------- РЕСАЙЗ ---------- */
+(function () {
+  if (!videoWindow || !videoWindowResize) return;
+
+  let isResizing = false;
+  let startX = 0, startY = 0;
+  let startW = 0, startH = 0;
+
+  videoWindowResize.addEventListener('mousedown', function (e) {
+    isResizing = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startW = videoWindow.offsetWidth;
+    startH = videoWindow.offsetHeight;
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!isResizing) return;
+
+    let newW = startW + (e.clientX - startX);
+    let newH = startH + (e.clientY - startY);
+
+    newW = Math.max(320, newW);
+    newH = Math.max(200, newH);
+
+    const rect = videoWindow.getBoundingClientRect();
+    if (rect.left + newW > window.innerWidth) {
+      newW = window.innerWidth - rect.left;
+    }
+    if (rect.top + newH > window.innerHeight) {
+      newH = window.innerHeight - rect.top;
+    }
+
+    videoWindow.style.width = newW + 'px';
+    videoWindow.style.height = newH + 'px';
+  });
+
+  document.addEventListener('mouseup', function () {
+    isResizing = false;
+  });
+
+  /* Touch */
+  videoWindowResize.addEventListener('touchstart', function (e) {
+    const touch = e.touches[0];
+    isResizing = true;
+    startX = touch.clientX;
+    startY = touch.clientY;
+    startW = videoWindow.offsetWidth;
+    startH = videoWindow.offsetHeight;
+    e.stopPropagation();
+  }, { passive: true });
+
+  document.addEventListener('touchmove', function (e) {
+    if (!isResizing) return;
+    const touch = e.touches[0];
+    let newW = startW + (touch.clientX - startX);
+    let newH = startH + (touch.clientY - startY);
+
+    newW = Math.max(320, newW);
+    newH = Math.max(200, newH);
+
+    videoWindow.style.width = newW + 'px';
+    videoWindow.style.height = newH + 'px';
+  }, { passive: true });
+
+  document.addEventListener('touchend', function () {
+    isResizing = false;
+  });
+})();
 
 /* ---------------------------------------------------------------
    SHOW MORE VIDEOS — плавное раскрытие
@@ -146,44 +316,3 @@ console.log(
   'color:#09BBC8;font-family:monospace;font-size:16px;font-weight:bold;',
   'color:#61ad73;font-family:monospace;font-size:12px;'
 );
-/* ---------------------------------------------------------------
-   GALLERY LIGHTBOX
---------------------------------------------------------------- */
-(function () {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const lightboxClose = document.getElementById('lightbox-close');
-  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
-  if (!lightbox || !lightboxImg) return;
-
-  function openLightbox(src, caption) {
-    lightboxImg.src = src;
-    lightboxCaption.textContent = caption || '';
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    lightboxImg.src = '';
-    lightboxCaption.textContent = '';
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.gallery-item').forEach(function (item) {
-    item.addEventListener('click', function () {
-      const img = item.querySelector('img');
-      if (!img) return;
-      const caption = item.getAttribute('data-caption') || '';
-      openLightbox(img.src, caption);
-    });
-  });
-
-  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
-})();
