@@ -146,3 +146,44 @@ console.log(
   'color:#09BBC8;font-family:monospace;font-size:16px;font-weight:bold;',
   'color:#61ad73;font-family:monospace;font-size:12px;'
 );
+/* ---------------------------------------------------------------
+   GALLERY LIGHTBOX
+--------------------------------------------------------------- */
+(function () {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+  if (!lightbox || !lightboxImg) return;
+
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    lightboxCaption.textContent = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      const img = item.querySelector('img');
+      if (!img) return;
+      const caption = item.getAttribute('data-caption') || '';
+      openLightbox(img.src, caption);
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
