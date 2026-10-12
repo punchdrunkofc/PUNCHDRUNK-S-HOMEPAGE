@@ -1,7 +1,7 @@
 /* ================================================================
    PUNCHDRUNK.WAV — style
    Font: Home Video Bold (в корне репозитория)
-   Palette: Evergreen / Twilight Indigo / Strong Cyan / Electric Sapphire / Frozen Water
+   Palette: чёрный фон + Strong Cyan / Electric Sapphire / Twilight Indigo / Frozen Water
    ================================================================ */
 
 @font-face {
@@ -13,24 +13,23 @@
 }
 
 :root {
-  /* -------- ФОНЫ -------- */
-  --bg:      #07240F;   /* Evergreen — основной фон */
-  --bg-2:    #0a1626;   /* затемнённый Twilight Indigo — фон секций-чередований */
-  --panel:   #0d1e33;   /* панели, карточки */
+  /* -------- ФОНЫ (ВСЁ ЧЁРНОЕ) -------- */
+  --bg:      #000000;   /* чистый чёрный — основной фон */
+  --bg-2:    #050505;   /* почти чёрный — фон секций-чередований */
+  --panel:   #0a0a0a;   /* панели, карточки */
 
   /* -------- ТЕКСТ -------- */
   --fg:      #D9FCED;   /* Frozen Water — основной текст */
-  --dim:     #1a2f55;   /* тёмно-синий для рамок */
-  --muted:   #6a8bb8;   /* приглушённый подпись-текст */
+  --dim:     #1a1a1a;   /* тёмная рамка */
+  --muted:   #6a8bb8;   /* приглушённый текст */
 
-  /* -------- АКЦЕНТЫ САЙТА -------- */
+  /* -------- АКЦЕНТЫ -------- */
   --accent:  #09BBC8;   /* Strong Cyan — главный акцент */
   --accent-2:#405FFA;   /* Electric Sapphire — второй акцент */
-  --accent-3:#383664;   /* Twilight Indigo — третий (тёмный) */
+  --accent-3:#383664;   /* Twilight Indigo — третий */
 
   /* -------- ПЕРСОНАЖИ (не трогаем) -------- */
   --kenny:   #61ad73;
-  --kenny-hair: #7b2cbf;
   --maurice: #ff7a1a;
 }
 
@@ -70,7 +69,7 @@ h1, h2, h3,
   justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
-  background: rgba(7, 36, 15, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   border-bottom: 2px solid var(--accent);
   position: sticky;
   top: 0;
@@ -102,7 +101,7 @@ h1, h2, h3,
 
 .cta-btn {
   background: var(--accent);
-  color: var(--bg);
+  color: #000;
   padding: 10px 18px;
   text-decoration: none;
   font-size: 13px;
@@ -121,9 +120,9 @@ h1, h2, h3,
 .hero {
   padding: 70px 40px;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(97, 173, 115, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(255, 122, 26, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(64, 95, 250, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse at 20% 50%, rgba(97, 173, 115, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 122, 26, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(64, 95, 250, 0.15) 0%, transparent 70%),
     var(--bg);
 }
 
@@ -225,7 +224,7 @@ h1, h2, h3,
 
 .btn-primary {
   background: var(--accent);
-  color: var(--bg);
+  color: #000;
   border-color: var(--accent);
 }
 
@@ -243,7 +242,7 @@ h1, h2, h3,
 
 .btn-secondary:hover {
   background: var(--accent-2);
-  color: var(--bg);
+  color: #000;
   box-shadow: 0 0 25px rgba(64, 95, 250, 0.6);
 }
 
@@ -301,7 +300,7 @@ h1, h2, h3,
 /* ---------- MARQUEE ---------- */
 .marquee {
   background: var(--accent);
-  color: var(--bg);
+  color: #000;
   padding: 12px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -355,7 +354,7 @@ h1, h2, h3,
   gap: 20px;
   align-items: flex-start;
   transition: all 0.3s;
-  background: rgba(13, 30, 51, 0.6);
+  background: rgba(10, 10, 10, 0.6);
 }
 
 .crew-card.kenny { border-color: rgba(97, 173, 115, 0.5); }
@@ -440,7 +439,7 @@ h1, h2, h3,
 .video-card {
   display: block;
   text-decoration: none;
-  background: rgba(13, 30, 51, 0.6);
+  background: rgba(10, 10, 10, 0.6);
   border: 2px solid var(--dim);
   transition: all 0.25s;
   color: var(--fg);
@@ -458,7 +457,7 @@ h1, h2, h3,
   aspect-ratio: 16 / 9;
   background:
     repeating-linear-gradient(0deg, rgba(9,187,200,0.06) 0px, rgba(9,187,200,0.06) 2px, transparent 2px, transparent 4px),
-    linear-gradient(135deg, #07240F 0%, #0a1626 100%);
+    linear-gradient(135deg, #050505 0%, #000000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -479,7 +478,7 @@ h1, h2, h3,
   top: 10px;
   left: 10px;
   background: var(--accent);
-  color: var(--bg);
+  color: #000;
   padding: 4px 10px;
   font-family: "Press Start 2P", monospace;
   font-size: 9px;
@@ -501,7 +500,7 @@ h1, h2, h3,
   grid-template-columns: 120px 1fr auto;
   align-items: center;
   padding: 20px;
-  background: rgba(13, 30, 51, 0.6);
+  background: rgba(10, 10, 10, 0.6);
   border: 2px solid var(--dim);
   transition: all 0.2s;
 }
@@ -523,7 +522,7 @@ h1, h2, h3,
   letter-spacing: 2px;
 }
 
-.show:hover .show-status { background: var(--accent); color: var(--bg); }
+.show:hover .show-status { background: var(--accent); color: #000; }
 
 /* ---------- CONTACT ---------- */
 .contact-grid {
@@ -535,7 +534,7 @@ h1, h2, h3,
 .contact-card {
   display: block;
   padding: 22px;
-  background: rgba(13, 30, 51, 0.6);
+  background: rgba(10, 10, 10, 0.6);
   border: 2px solid var(--dim);
   text-decoration: none;
   color: var(--fg);
@@ -562,7 +561,7 @@ h1, h2, h3,
 
 /* ---------- FOOTER ---------- */
 .footer {
-  background: #041810;
+  background: #000000;
   color: var(--fg);
   padding: 30px 40px;
   border-top: 2px solid var(--accent);
