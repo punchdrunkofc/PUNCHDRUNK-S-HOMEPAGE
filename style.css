@@ -1,297 +1,248 @@
-/* ================================================================ */
-/*              PUNCHDRUNK'S HOMEPAGE — WEB 2003 STYLE              */
-/* ================================================================ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUNCHDRUNK.WAV — BASSQUAKE</title>
+<meta name="description" content="Digital hardcore / gabber artist. New single BASSQUAKE OUT NOW.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- ВЕРХНИЙ ХЕДЕР -->
+<header class="header">
+  <div class="logo">
+    <span class="logo-mark">⚡</span>
+    <span class="logo-text">PUNCHDRUNK<span class="accent">.WAV</span></span>
+  </div>
+  <nav class="nav">
+    <a href="#music">MUSIC</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#shows">SHOWS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <a href="#music" class="cta-btn">NEW SINGLE ↓</a>
+</header>
 
-html, body {
-  height: 100%;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  color: #000080;
-  background-color: #3366cc;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    linear-gradient(135deg, #3366cc, #66a3ff, #3366cc);
-  cursor: default;
-  padding: 20px 0;
-}
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">// NEW SINGLE // 2026</div>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="BASSQUAKE">BASSQUAKE</span>
+      </h1>
+      <div class="hero-sub">PUNCHDRUNK ft. CYANBOY</div>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">▶ PLAY NOW</a>
+        <a href="#videos" class="btn btn-secondary">WATCH CLIP</a>
+      </div>
+      <div class="hero-platforms">
+        <span>LISTEN ON:</span>
+        <a href="#">SPOTIFY</a>
+        <a href="#">YOUTUBE</a>
+        <a href="#">SOUNDCLOUD</a>
+        <a href="#">BANDCAMP</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="cover-art">
+        <div class="cover-glitch"></div>
+        <div class="cover-title">BASSQUAKE</div>
+        <div class="cover-sub">PUNCHDRUNK × CYANBOY</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ---------- ВЕРХНИЙ БАННЕР ---------- */
-.top-banner {
-  background: #000080;
-  color: #ffff00;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-  padding: 8px 0;
-  border-top: 3px solid #ffff00;
-  border-bottom: 3px solid #ffff00;
-  margin-bottom: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ </span>
+    <span>★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ BASSQUAKE OUT NOW ★ DIGITAL HARDCORE ★ GABBER ★ 180 BPM ★ LOUDER ★ FASTER ★ HARDCORE ★ </span>
+  </div>
+</div>
 
-.top-banner marquee {
-  display: block;
-}
+<!-- MUSIC -->
+<section class="section" id="music">
+  <div class="section-inner">
+    <div class="section-tag">// DISCOGRAPHY</div>
+    <h2 class="section-title">MY <span class="accent">MUSIC</span></h2>
 
-/* ---------- ГЛАВНАЯ РАМКА ---------- */
-.page {
-  max-width: 780px;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 4px double #000080;
-  padding: 20px;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
-}
+    <div class="tracks">
+      <article class="track">
+        <div class="track-art" style="background:#e8f000;">01</div>
+        <div class="track-info">
+          <div class="track-name">BASSQUAKE <span class="track-feat">ft. CYANBOY</span></div>
+          <div class="track-meta">SINGLE · 2026 · 180 BPM</div>
+        </div>
+        <div class="track-actions">
+          <button class="track-play" data-src="#">▶</button>
+        </div>
+      </article>
 
-/* ---------- ЗАГОЛОВОК ---------- */
-.header {
-  text-align: center;
-  padding-bottom: 16px;
-  border-bottom: 3px double #000080;
-  margin-bottom: 20px;
-}
+      <article class="track">
+        <div class="track-art" style="background:#2222cc;color:#fff;">02</div>
+        <div class="track-info">
+          <div class="track-name">TOTAL OVERDRIVE</div>
+          <div class="track-meta">EP · 2025 · 195 BPM</div>
+        </div>
+        <div class="track-actions">
+          <button class="track-play">▶</button>
+        </div>
+      </article>
 
-.site-title {
-  font-size: 36px;
-  color: #ff0000;
-  text-shadow: 2px 2px 0 #000080, 4px 4px 0 #ffff00;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-  font-family: "Times New Roman", Times, serif;
-  animation: title-blink 2s infinite;
-}
+      <article class="track">
+        <div class="track-art" style="background:#ff0000;color:#fff;">03</div>
+        <div class="track-info">
+          <div class="track-name">SYSTEM FAILURE</div>
+          <div class="track-meta">SINGLE · 2025 · 200 BPM</div>
+        </div>
+        <div class="track-actions">
+          <button class="track-play">▶</button>
+        </div>
+      </article>
 
-@keyframes title-blink {
-  0%, 90%, 100% { opacity: 1; }
-  92%           { opacity: 0.3; }
-  94%           { opacity: 1; }
-  96%           { opacity: 0.5; }
-  98%           { opacity: 1; }
-}
+      <article class="track">
+        <div class="track-art" style="background:#000;color:#e8f000;">04</div>
+        <div class="track-info">
+          <div class="track-name">DON'T STOP</div>
+          <div class="track-meta">SINGLE · 2024 · 175 BPM</div>
+        </div>
+        <div class="track-actions">
+          <button class="track-play">▶</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-.site-subtitle {
-  font-size: 14px;
-  color: #000080;
-  font-style: italic;
-  letter-spacing: 3px;
-}
+<!-- VIDEOS -->
+<section class="section section-dark" id="videos">
+  <div class="section-inner">
+    <div class="section-tag">// WATCH</div>
+    <h2 class="section-title">VIDEOS</h2>
 
-/* ---------- НАВИГАЦИЯ ---------- */
-.nav {
-  background: #000080;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 2px inset #cccccc;
-}
+    <div class="videos">
+      <a href="https://youtube.com" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-badge">NEW</div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">BASSQUAKE (OFFICIAL VIDEO)</div>
+          <div class="video-meta">4.7K views · 4 months ago</div>
+        </div>
+      </a>
 
-.nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: "Courier New", monospace;
-  font-size: 13px;
-  font-weight: bold;
-  margin: 0 6px;
-  letter-spacing: 1px;
-}
+      <a href="https://youtube.com" target="_blank" class="video-card">
+        <div class="video-thumb"></div>
+        <div class="video-info">
+          <div class="video-title">GABOOM (OFFICIAL GABBER VIDEO)</div>
+          <div class="video-meta">2.1K views · 1 month ago</div>
+        </div>
+      </a>
 
-.nav a:hover {
-  color: #ffff00;
-  background: #000066;
-  text-decoration: underline;
-}
+      <a href="https://youtube.com" target="_blank" class="video-card">
+        <div class="video-thumb"></div>
+        <div class="video-info">
+          <div class="video-title">LIVE @ CLUB // 2025</div>
+          <div class="video-meta">1.4K views · 2 months ago</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-.nav a.active {
-  color: #ffff00;
-  text-decoration: underline;
-}
+<!-- SHOWS -->
+<section class="section" id="shows">
+  <div class="section-inner">
+    <div class="section-tag">// TOUR</div>
+    <h2 class="section-title">SHOWS</h2>
 
-/* ---------- КОНТЕНТ ---------- */
-.content {
-  min-height: 300px;
-}
+    <div class="shows">
+      <div class="show">
+        <div class="show-date">15.11.2026</div>
+        <div class="show-city">Москва · Клуб «Пульс»</div>
+        <div class="show-status">TICKETS</div>
+      </div>
+      <div class="show">
+        <div class="show-date">22.11.2026</div>
+        <div class="show-city">Санкт-Петербург · Клуб «Гараж»</div>
+        <div class="show-status">TICKETS</div>
+      </div>
+      <div class="show">
+        <div class="show-date">06.12.2026</div>
+        <div class="show-city">Казань · FEST HARDCORE</div>
+        <div class="show-status">SOON</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ---------- БЛОКИ ---------- */
-.box {
-  border: 2px outset #cccccc;
-  background: #f0f0f0;
-  margin-bottom: 16px;
-}
+<!-- ABOUT -->
+<section class="section section-dark" id="about">
+  <div class="section-inner">
+    <div class="section-tag">// ABOUT</div>
+    <h2 class="section-title">WHO IS <span class="accent">PUNCHDRUNK?</span></h2>
+    <p class="about-text">
+      Digital hardcore artist from Russia. Started in 2023 as a bedroom project, now playing clubs and festivals across Europe. Mixing gabber kicks with broken breaks, acid lines, and total noise. 200 BPM is a warm-up.
+    </p>
+    <p class="about-text dim">
+      "Louder. Faster. Harder. Don't stop."
+    </p>
+  </div>
+</section>
 
-.box-header {
-  background: #000080;
-  color: #ffff00;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 6px 10px;
-  border-bottom: 2px inset #cccccc;
-  letter-spacing: 2px;
-}
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">// CONTACT</div>
+    <h2 class="section-title">GET IN TOUCH</h2>
 
-.box-body {
-  padding: 14px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #000080;
-}
+    <div class="contact-grid">
+      <a href="mailto:book@punchdrunk.wav" class="contact-card">
+        <div class="contact-icon">@</div>
+        <div class="contact-label">BOOKING</div>
+        <div class="contact-value">book@punchdrunk.wav</div>
+      </a>
+      <a href="https://youtube.com" class="contact-card">
+        <div class="contact-icon">▶</div>
+        <div class="contact-label">YOUTUBE</div>
+        <div class="contact-value">@punchdrunk.wav</div>
+      </a>
+      <a href="https://t.me" class="contact-card">
+        <div class="contact-icon">✈</div>
+        <div class="contact-label">TELEGRAM</div>
+        <div class="contact-value">@punchdrunkwav</div>
+      </a>
+      <a href="https://discord.gg" class="contact-card">
+        <div class="contact-icon">◎</div>
+        <div class="contact-label">DISCORD</div>
+        <div class="contact-value">/punchdrunk</div>
+      </a>
+    </div>
+  </div>
+</section>
 
-.box-body p {
-  margin-bottom: 10px;
-}
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 PUNCHDRUNK.WAV</div>
+    <div class="footer-links">
+      <a href="#">PRESS KIT</a>
+      <a href="#">MERCH</a>
+      <a href="#">DEMO</a>
+    </div>
+    <div>MADE WITH ⚡ IN RUSSIA</div>
+  </div>
+</footer>
 
-.signature {
-  text-align: right;
-  font-style: italic;
-  color: #808080;
-  margin-top: 12px !important;
-}
+<script src="script.js"></script>
 
-/* ---------- ССЫЛКИ ---------- */
-.box-body a {
-  color: #0000ff;
-  text-decoration: underline;
-}
-
-.box-body a:visited {
-  color: #800080;
-}
-
-.box-body a:hover {
-  color: #ff0000;
-  background: #ffff00;
-}
-
-/* ---------- НОВОСТИ ---------- */
-.news {
-  list-style: none;
-}
-
-.news li {
-  padding: 8px 0;
-  border-bottom: 1px dashed #999999;
-}
-
-.news li:last-child {
-  border-bottom: none;
-}
-
-.news .date {
-  display: inline-block;
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-  color: #808080;
-  margin-right: 10px;
-}
-
-/* ---------- СЧЁТЧИК ---------- */
-.counter-box {
-  text-align: center;
-}
-
-.counter {
-  display: inline-block;
-  background: #000000;
-  padding: 8px 16px;
-  margin: 10px 0;
-  border: 2px inset #666666;
-}
-
-.counter span {
-  font-family: "Courier New", monospace;
-  font-size: 28px;
-  color: #00ff00;
-  letter-spacing: 6px;
-  text-shadow: 0 0 10px #00ff00;
-}
-
-/* ---------- СПИСОК ССЫЛОК ---------- */
-.links {
-  list-style: none;
-}
-
-.links li {
-  padding: 6px 0;
-}
-
-/* ---------- КНОПКИ 88x31 ---------- */
-.buttons-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 16px;
-  background: #e0e0e0;
-  border: 2px inset #cccccc;
-}
-
-.btn-88 {
-  display: inline-block;
-  width: 88px;
-  height: 31px;
-  background: #000080;
-  color: #ffff00;
-  font-family: "Courier New", monospace;
-  font-size: 9px;
-  text-align: center;
-  line-height: 1.2;
-  padding-top: 7px;
-  border: 1px solid #000000;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* ---------- ПОДВАЛ ---------- */
-.footer {
-  border-top: 3px double #000080;
-  padding-top: 14px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 12px;
-  color: #000080;
-}
-
-.footer-line {
-  padding: 3px 0;
-}
-
-.footer a {
-  color: #0000ff;
-}
-
-.dim {
-  color: #808080;
-  font-style: italic;
-}
-
-/* ---------- АНИМИРОВАННЫЙ ФОН (опционально) ---------- */
-@keyframes starfield {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
-}
-
-/* ---------- МОБИЛЬНАЯ ---------- */
-@media (max-width: 800px) {
-  .page { margin: 0 10px; padding: 14px; }
-  .site-title { font-size: 22px; letter-spacing: 0; }
-  .site-subtitle { font-size: 12px; letter-spacing: 1px; }
-  .nav a { display: block; margin: 4px 0; font-size: 12px; }
-  .counter span { font-size: 20px; letter-spacing: 3px; }
-  .top-banner marquee { font-size: 12px; }
-}
+</body>
+</html>
