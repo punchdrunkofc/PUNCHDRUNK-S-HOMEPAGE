@@ -1,13 +1,5 @@
-// ================================================================
-//  PUNCHDRUNK.WAV — site interactivity
-//  Тёмный концертный стиль: глитч, звук, скролл, marquee.
-// ================================================================
-
 'use strict';
 
-// ---------------------------------------------------------------
-// 1. AUDIO CONTEXT — короткий "удар" при клике на кнопки
-// ---------------------------------------------------------------
 let AC = null;
 function ctx() {
   if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
@@ -19,7 +11,6 @@ function punchSound() {
   const c = ctx();
   const t = c.currentTime;
 
-  // Кик
   const osc = c.createOscillator();
   const gain = c.createGain();
   osc.type = 'sine';
@@ -32,8 +23,7 @@ function punchSound() {
   osc.start(t);
   osc.stop(t + 0.2);
 
-  // Шумовой "хлопок"
-  const buf = c.createBuffer(1, c.sampleRate * 0.1, c.sampleRate);
+  const buf = c.createBuffer(1, Math.floor(c.sampleRate * 0.1), c.sampleRate);
   const data = buf.getChannelData(0);
   for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
   const src = c.createBufferSource();
@@ -49,19 +39,12 @@ function punchSound() {
   src.stop(t + 0.12);
 }
 
-// ---------------------------------------------------------------
-// 2. КЛИКИ ПО КНОПКАМ — звук
-// ---------------------------------------------------------------
 document.addEventListener('click', function (e) {
   const target = e.target.closest('a, button');
   if (!target) return;
-  if (target.classList.contains('nav-link')) return;
   try { punchSound(); } catch (err) {}
 }, { passive: true });
 
-// ---------------------------------------------------------------
-// 3. ПЛАВНЫЙ СКРОЛЛ ПО ЯКОРЯМ
-// ---------------------------------------------------------------
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {
     const id = a.getAttribute('href');
@@ -74,22 +57,17 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   });
 });
 
-// ---------------------------------------------------------------
-// 4. ГЛИТЧ ЗАГОЛОВКА — случайные подёргивания
-// ---------------------------------------------------------------
 const glitchEl = document.querySelector('.glitch');
 if (glitchEl) {
   setInterval(function () {
     if (Math.random() < 0.25) {
-      glitchEl.style.transform = 'translate(' + (Math.random() * 4 - 2) + 'px,' + (Math.random() * 4 - 2) + 'px)';
+      glitchEl.style.transform =
+        'translate(' + (Math.random() * 4 - 2) + 'px,' + (Math.random() * 4 - 2) + 'px)';
       setTimeout(function () { glitchEl.style.transform = ''; }, 100);
     }
   }, 2500);
 }
 
-// ---------------------------------------------------------------
-// 5. ПОЯВЛЕНИЕ СЕКЦИЙ ПРИ СКРОЛЛЕ
-// ---------------------------------------------------------------
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -109,9 +87,6 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// ---------------------------------------------------------------
-// 6. ЖИВОЙ MARQUEE — замедление при hover
-// ---------------------------------------------------------------
 const marqueeTrack = document.querySelector('.marquee-track');
 if (marqueeTrack) {
   const marquee = marqueeTrack.closest('.marquee');
@@ -125,11 +100,8 @@ if (marqueeTrack) {
   }
 }
 
-// ---------------------------------------------------------------
-// 7. ПРИВЕТСТВИЕ В КОНСОЛИ
-// ---------------------------------------------------------------
 console.log(
-  '%cPUNCHDRUNK.WAV%c\\nQUESTIONS PART 2 — OUT NOW\\nDigital hardcore / gabber.',
+  '%cPUNCHDRUNK.WAV%c\\nQUESTIONS PART 2 — OUT NOW',
   'color:#ff0033;font-family:monospace;font-size:16px;font-weight:bold;',
   'color:#61ad73;font-family:monospace;font-size:12px;'
 );
