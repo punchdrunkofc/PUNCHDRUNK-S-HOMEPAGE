@@ -73,16 +73,24 @@ h1, h2, h3,
   backdrop-filter: blur(8px);
 }
 
-.logo { display: flex; align-items: center; gap: 10px; font-size: 20px; }
+.logo { display: flex; align-items: center; gap: 12px; font-size: 20px; }
 
-.logo-mark { color: var(--accent); font-size: 26px; animation: blink 1.5s infinite; }
+.logo-img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+  filter: invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: rotate(-12deg) scale(1.08);
+  filter: invert(1) drop-shadow(0 0 10px var(--accent));
+}
+
 .logo-text { color: var(--fg); }
 .logo-text .accent { color: var(--accent); }
-
-@keyframes blink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0.2; }
-}
 
 .nav { display: flex; gap: 28px; font-family: 'Home Video', monospace; font-size: 14px; }
 
@@ -752,6 +760,7 @@ h1, h2, h3,
   .marquee-track { font-size: 16px; }
 
   .crew-avatar { width: 90px; height: 90px; }
+  .logo-img { width: 34px; height: 34px; }
 }
 
 /* ---------- VIDEO WINDOW (draggable + resizable) ---------- */
@@ -775,9 +784,7 @@ h1, h2, h3,
   user-select: none;
 }
 
-.video-window.open {
-  display: flex;
-}
+.video-window.open { display: flex; }
 
 .video-window-bar {
   display: flex;
@@ -794,9 +801,7 @@ h1, h2, h3,
   text-transform: uppercase;
 }
 
-.video-window-bar.dragging {
-  cursor: grabbing;
-}
+.video-window-bar.dragging { cursor: grabbing; }
 
 .video-window-title {
   overflow: hidden;
@@ -869,9 +874,7 @@ h1, h2, h3,
   transition: opacity 0.2s;
 }
 
-.video-window-resize:hover {
-  opacity: 1;
-}
+.video-window-resize:hover { opacity: 1; }
 
 @media (max-width: 700px) {
   .video-window {
@@ -881,21 +884,12 @@ h1, h2, h3,
     bottom: 10px;
   }
 
-  .video-window-bar {
-    font-size: 10px;
-    padding: 6px 10px;
-  }
-
-  .video-window-close {
-    width: 22px;
-    height: 22px;
-  }
+  .video-window-bar { font-size: 10px; padding: 6px 10px; }
+  .video-window-close { width: 22px; height: 22px; }
 }
 
 /* ---------- SAMPLES PAGE ---------- */
-.hero-samples {
-  padding: 70px 40px 60px;
-}
+.hero-samples { padding: 70px 40px 60px; }
 
 .hero-samples-desc {
   color: #b8d8e8;
@@ -948,10 +942,7 @@ h1, h2, h3,
   z-index: 2;
 }
 
-.sample-body {
-  margin-top: auto;
-  margin-bottom: auto;
-}
+.sample-body { margin-top: auto; margin-bottom: auto; }
 
 .sample-title {
   font-family: 'Home Video', monospace;
@@ -981,9 +972,7 @@ h1, h2, h3,
   opacity: 0.85;
 }
 
-.sample-card:hover .sample-download {
-  opacity: 1;
-}
+.sample-card:hover .sample-download { opacity: 1; }
 
 .sample-card::before {
   content: "";
