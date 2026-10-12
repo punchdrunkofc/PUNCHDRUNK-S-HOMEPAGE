@@ -100,7 +100,6 @@ function closeVideo() {
   videoWindowFrame.innerHTML = '';
 }
 
-/* Открытие по клику на карточку */
 document.querySelectorAll('.video-card[data-video]').forEach(function (card) {
   card.addEventListener('click', function () {
     const id = card.getAttribute('data-video');
@@ -110,7 +109,6 @@ document.querySelectorAll('.video-card[data-video]').forEach(function (card) {
   });
 });
 
-/* Кнопка WATCH ALBUM в hero */
 document.querySelectorAll('[data-video]').forEach(function (el) {
   if (el.classList.contains('video-card')) return;
   el.addEventListener('click', function () {
@@ -175,7 +173,6 @@ document.addEventListener('keydown', function (e) {
     videoWindowBar.classList.remove('dragging');
   });
 
-  /* Touch */
   videoWindowBar.addEventListener('touchstart', function (e) {
     if (e.target.closest('.video-window-close')) return;
     const touch = e.touches[0];
@@ -258,7 +255,6 @@ document.addEventListener('keydown', function (e) {
     isResizing = false;
   });
 
-  /* Touch */
   videoWindowResize.addEventListener('touchstart', function (e) {
     const touch = e.touches[0];
     isResizing = true;
