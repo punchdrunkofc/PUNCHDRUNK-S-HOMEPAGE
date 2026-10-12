@@ -406,16 +406,16 @@ h1, h2, h3,
 
 /* Kenny — левая часть исходной картинки */
 .crew-photo-kenny {
-  object-position: 20% 37%;
+  object-position: 20% 20%;
   transform: scale(2.0);
-  transform-origin: 20% 37%;
+  transform-origin: 20% 20%;
 }
 
 /* Maurice — правая часть исходной картинки */
 .crew-photo-maurice {
-  object-position: 78% 15%;
+  object-position: 75% 15%;
   transform: scale(2.0);
-  transform-origin: 78% 15%;
+  transform-origin: 75% 15%;
 }
 
 .crew-info { flex: 1; }
