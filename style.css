@@ -80,13 +80,13 @@ h1, h2, h3,
   height: 40px;
   display: block;
   border-radius: 50%;
-  filter: invert(1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover .logo-img {
   transform: rotate(-12deg) scale(1.08);
-  filter: invert(1) drop-shadow(0 0 10px var(--accent));
+  box-shadow: 0 0 15px rgba(9, 187, 200, 0.7);
 }
 
 .logo-text { color: var(--fg); }
